@@ -1,11 +1,16 @@
-import React from 'react'
-import WelcomPage from './components/WelcomPage'
+import React from 'react';
+import {Route,Routes} from "react-router-dom";
+import HomePage from './components/HomePage';
+import LoginPage from './pages/LoginPage';
 
 const App = () => {
   return (
-    <main className='h-screen w-screen overflow-hidden'>
-      <WelcomPage/>
-    </main>
+    <>
+    <Routes>
+      <Route path='/' element={<HomePage/>}/>
+      <Route path='/login-page' element={<LoginPage/>}/>
+    </Routes>
+    </>
   )
 }
 

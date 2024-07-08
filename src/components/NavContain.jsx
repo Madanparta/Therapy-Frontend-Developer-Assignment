@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { useNavigate } from 'react-router-dom';
 
 const NavContain = ({navContainerData,countPages,skipButton,nextButton}) => {
     const [hovered, setHovered] = useState(false);
+    const navigation = useNavigate();
 
     const renderProgressBar = () => {
         return navContainerData.map((navCon,index)=>{
@@ -27,7 +29,7 @@ const NavContain = ({navContainerData,countPages,skipButton,nextButton}) => {
     }
 
     const handlNavLogin = () => {
-        console.log("login page")
+        navigation('/login-page')
     }
   return (
     <section className={`${countPages === 0 ? 'NavContain01' : 'NavContain'} w-[80%] h-[400px] rounded-[40px] px-4 py-5 bg-[#FE8C00] text-white flex flex-col items-center justify-between`}>
