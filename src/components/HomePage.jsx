@@ -3,7 +3,7 @@ import WelcomPage from "./WelcomPage";
 
 const HomePage = () => {
   return (
-    <div className='h-screen w-screen overflow-hidden fixed'>
+    <div className='h-screen w-screen overflow-hidden'>
       <WelcomPage/>
     </div>
   )
