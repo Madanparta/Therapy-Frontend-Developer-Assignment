@@ -21,7 +21,6 @@
 .welecome-page{
     background-image: url('./assets/project-demo-bg2-img.png');
     background-repeat: no-repeat;
-    /* background-position: center; */
     background-size: cover;
 }
 .NavContain01{
@@ -34,8 +33,6 @@
     background-repeat: 0;
     background-position: 0;
     background-size: 0;
-    /* transform: scale(0.5) translateY(-120px);
-    margin-bottom: 36px; */
 }
 
 .finishButton{

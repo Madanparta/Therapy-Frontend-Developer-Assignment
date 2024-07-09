@@ -17,7 +17,7 @@ const WelcomPage = () => {
         setCurrentPage(0)
     },[]);
   return (
-    <section className={`w-screen h-screen ${currentPage === 0 ? 'welecome-page01' : 'welecome-page'}`}>
+    <section className={`w-screen h-screen overflow-hidden ${currentPage === 0 ? 'welecome-page01' : 'welecome-page'}`}>
       <div className='w-full h-full flex justify-center items-end pb-[35px]'>
         <NavContain navContainerData={data} countPages={currentPage} skipButton={handleSkipButton} nextButton={handleNextButton}/>
       </div>
