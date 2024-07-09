@@ -7,6 +7,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth,db } from '../components/firebase';
 import {setDoc,doc} from 'firebase/firestore';
 import SpinnerLoader from '../components/shared/SpinnerLoader.jsx';
+import toast from 'react-hot-toast';
 
 
 const SignUpPage = () => {
@@ -32,7 +33,6 @@ const SignUpPage = () => {
         try {
             await createUserWithEmailAndPassword(auth,email,password);
             const user = auth.currentUser;
-            console.log(user)
             if(user){
                 await setDoc(doc(db,'Users',user.uid),{
                     email:user.email,
