@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { RxEyeOpen } from "react-icons/rx";
 import { GoEyeClosed } from "react-icons/go";
 import Google from "../assets/GoogleImg.png";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../components/firebase';
 import SpinnerLoader from '../components/shared/SpinnerLoader';
@@ -12,6 +12,7 @@ import GoogleSign from '../components/GoogleSign';
 const LoginPage = () => {
   const [showPassword,setShowPassword] = useState(true);
   const [loading,setLoading]=useState(false);
+  const navigation = useNavigate()
 
   const handleLoginForm = async(e) => {
     e.preventDefault();
@@ -25,9 +26,9 @@ const LoginPage = () => {
       console.log("User logged in Successfully");
       setLoading(false)
       toast.success('successfully login',{id:'login'});
+      navigation('/log-success')
     } catch (error) {
       setLoading(false);
-      console.log(error.message);
       toast.error(error.message,{id:'login'});
     }
   };
