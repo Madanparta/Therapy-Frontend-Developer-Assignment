@@ -8,6 +8,7 @@ import { auth,db } from '../components/firebase';
 import {setDoc,doc} from 'firebase/firestore';
 import SpinnerLoader from '../components/shared/SpinnerLoader.jsx';
 import toast from 'react-hot-toast';
+import GoogleSign from '../components/GoogleSign.jsx';
 
 
 const SignUpPage = () => {
@@ -92,9 +93,10 @@ const SignUpPage = () => {
           </fieldset>
     
           <section className='h-[40px] w-full flex justify-center items-center my-6 md:w-4/12'>
-            <button className='w-[40px] h-[40px] rounded-full border p-2'>
+            {/* <button className='w-[40px] h-[40px] rounded-full border p-2'>
               <img className='w-full h-full' src={Google} alt='google'/>
-            </button>
+            </button> */}
+            <GoogleSign/>
           </section>
     
           <section className='w-full h-full md:w-4/12'>
