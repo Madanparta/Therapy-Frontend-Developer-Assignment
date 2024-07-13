@@ -5,6 +5,7 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { IoIosShareAlt } from "react-icons/io";
 // import { v4 as uuidV4} from 'uuid';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import Quotes from '../pages/Quotes';
 
 const TrackingScreen = () => {
 
@@ -60,7 +61,7 @@ const TrackingScreen = () => {
           <AnalogClock time={formattedTime} setRemainingTime={setRemainingTime} remainingTime={remainingTime} playbackSpeed={playbackSpeed}/>
         </section>
 
-        <section className='text-white w-full h-[100px] flex justify-center items-center relative  flex-col gap-6'>
+        <section className='text-white w-full h-[100px] flex justify-center items-center relative  flex-col gap-6 mb-10'>
           <div className='flex justify-center items-center gap-2 shareContainer'>
             <button onClick={()=>setShowLink(true)} className='z-30 focus:border-b-[1px] border-[#FE8C00] relative'>
               Share
@@ -68,12 +69,17 @@ const TrackingScreen = () => {
             </button>
             <IoIosShareAlt className='shareIcon' size={22} color='#FE8C00'/>
           </div>
-          {showLink && (<div className='w-full h=full flex justify-center items-center gap-3'>
+          {showLink && (<div className='w-full h=full flex justify-center items-center gap-3 '>
             <CopyToClipboard text='https://therapy-frontend-developer-assignment.netlify.app/tracking-screen' onCopy={onCopy}>
               <p className='text-[12px] cursor-pointer'>https://therapy-frontend-developer-assignment.netlify.app/</p>
             </CopyToClipboard>
             {copied && <p className='text-[8px] text-gray-300'>Copied!</p>}
           </div>)}
+        </section>
+
+
+        <section className='w-full h-full my-2'>
+          <Quotes/>
         </section>
 
       </main>
