@@ -44,7 +44,7 @@ const TrackingScreen = () => {
     <section className="w-full h-screen p-4 bg-black">
       <main className='w-full h-[50vh]'>
 
-        {showSideBar ? (<div className='w-fit h-fit text-white relative'>
+        {showSideBar ? (<div className='w-fit h-fit text-white relative my-5'>
           <MdKeyboardDoubleArrowRight onClick={()=>setShowSideBar(false)} color='white' className='cursor-pointer hover:translate-x-1 hover:text-[25px] ease-in-out duration-300'/>
             <span className='text-[9px] animate-bounce duration-300 absolute top-0 left-5 w-[100px]'>{slider}</span>
         </div>)
